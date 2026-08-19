@@ -8,6 +8,13 @@ Use these toolboxes until DFlash2 support is merged into stock llama.cpp.
 
 ## Running
 
+### Clone repo and enter
+
+```bash
+git clone https://github.com/claudejaune/strix-halo-dflash2-toolboxes
+cd strix-halo-dflash2-toolboxes
+```
+
 ### Get draft models
 Download the DFlash2 models from Hugging Face. Get the Q4 ones:
 
