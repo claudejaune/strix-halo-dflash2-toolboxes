@@ -1,6 +1,8 @@
 # Strix Halo DFlash2 Toolboxes
 
-Pre-built containers for running **DFlash2** speculative decoding (see [release blog post](https://inco.ai/blog/dflash2/)) on AMD Ryzen AI Max "Strix Halo" (gfx1151). Built with llama.cpp PR #27342 (build 10498), adding support for the DFlash2 draft model architecture.
+Pre-built containers for running **DFlash2** speculative decoding (see [release blog post](https://inco.ai/blog/dflash2/)) on AMD Ryzen Strix Halo (AI Max +395 gfx1151).
+
+Built with [llama.cpp PR #27342](https://github.com/ggml-org/llama.cpp/pull/27342), these toolboxes add support for the DFlash2 draft model architecture.
 
 Use these toolboxes until DFlash2 support is merged into stock llama.cpp.
 
@@ -11,17 +13,20 @@ Download the DFlash2 models from Hugging Face. Get the Q4 ones:
 
 https://huggingface.co/incoai/Qwen3.8-27B-DFlash2-GGUF
 
-### Build and install a toolbox (choose vulkan or rocm)
+### Build and install a toolbox (choose Vulkan or ROCm)
 
 ```bash
-./setup.sh vulkan    # Vulkan RADV — most compatible
-./setup.sh rocm      # ROCm 7.14 — best performance
-./setup.sh all       # Both
+./setup.sh vulkan    # Vulkan RADV — smaller, better performance (RECOMMENDED)
+./setup.sh rocm      # ROCm 7.14 — HIP backend
+./setup.sh all       # Build both
 ```
 
 ### Edit presets file
 
-Inside the toolbox, edit `presets-dflashtest.ini` to point to your model paths, modify the context size (`ctx-size = 200000` by default), and `reasoning effort` (`medium` by default).
+Edit `presets-dflashtest.ini` to: 
+1. Point to your model paths
+2. (Optional) Modify the context size (`ctx-size = 200000` by default)
+3. (Optional) Change `reasoning effort` (`medium` by default).
 
 ### Enter the toolbox
 
